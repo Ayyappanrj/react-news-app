@@ -1,0 +1,19 @@
+.tag-span {
+    padding: 5px 15px;
+    border-radius: 20px;
+    margin-right: 5px;
+    background-color: #ffffff;
+    border: 1px solid #afafaf;
+    cursor: pointer;
+}
+
+.active {
+    background-color: #054D67;
+    border: 1px solid #054D67;
+    color: #ffffff;
+}
+
+.cus-res {
+    line-break: anywhere;
+    line-height: 40px;
+}
