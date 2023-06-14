@@ -41,7 +41,6 @@ const SignIn = () => {
             }
             instance.post(ApiEndPoints.loginUser, formData, config)
             .then((res: any) => {
-                console.log(res)
                 if (res.status === 200) {
                     toast.success(res?.message, {
                         position: "top-right",

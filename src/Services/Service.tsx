@@ -6,9 +6,12 @@ const instance = axios.create({ baseURL: API_URL });
 
 instance.interceptors.request.use(
   function (config) {
-
-    const token = JSON.parse(localStorage.getItem("INNOSCRIPTA_LOGIN") || "");
-    if (token != "") {
+    let token = null
+    if(localStorage.getItem("INNOSCRIPTA_LOGIN") != undefined || localStorage.getItem("INNOSCRIPTA_LOGIN") != null)
+    {
+      token = JSON.parse(localStorage.getItem("INNOSCRIPTA_LOGIN") || "");
+    }
+    if (token) {
       config.headers["Authorization"] = "Bearer " + token;
     }
     return config;

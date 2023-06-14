@@ -28,6 +28,17 @@ const NewsFeed = () => {
         });
     }, []);
 
+    
+    const convertDate = (data: any) => {
+        const monthNames = ["Jan", "Feb", "Mar", "April", "May", "June",
+            "July", "Aug", "Sep", "Oct", "Nov", "Dec"
+        ];
+        let date = new Date(data).getDate();
+        let count = new Date(data).getMonth() + 1;
+        let year = new Date(data).getFullYear();
+        return date + " " + monthNames[count] + " " + year;
+    }
+
     return (
         <>
             <BreadCrumb pagename="News Feed" link="news-feed" />
@@ -47,7 +58,8 @@ const NewsFeed = () => {
                                     <div className="whats-right-single mb-40" key={`news${i}`}>
                                         <div className="whats-right-cap">
                                             <span>{news.webTitle}</span>
-                                            {/* <h4><a href="javascript:void(0)">{news.description}</a></h4> */}
+                                            <h4><a href="javascript:void(0)">Section Name : {news.sectionName}</a></h4>
+                                            <p>Published at <a target="_blank">{convertDate(news.webPublicationDate)}</a></p>
                                             <p>Click To Visit <a target="_blank" href={news.webUrl}>Site</a></p>
                                         </div>
                                     </div>
